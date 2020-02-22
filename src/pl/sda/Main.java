@@ -4,23 +4,28 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner (System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("What is your weight in kg? ");
-        float weight = sc.nextFloat();
+        double weight = sc.nextDouble();
         System.out.println("What is your height in m? ");
-        float height = sc.nextFloat();
-
-        float bmi = bmi(height, weight);
-        System.out.println("Your bmi is " + bmi + "that qualifies as " + bmiDescriptive (bmi));
+        double height = sc.nextDouble();
+        double bmi = bmi(height, weight);
+        System.out.println("Your bmi is " + bmi + "that qualifies as " + bmiDescriptive(bmi));
     }
 
-    private static String bmiDescriptive(float bmi) {
-        if (bmi<18.5 ) return "Underweight";
-        else if (bmi<25) return "Normal (healthy weight)";
-        else return "Overweight";
+    private static String bmiDescriptive(double bmi) {
+        if (bmi < 18.5)
+            return "Underweight";
+        else if (bmi < 25)
+            return "Normal (healthy weight)";
+        else
+            return "Overweight";
     }
 
-    private static float bmi(float height, float weight) {
-        return weight/(height*height);
+    private static double bmi(double height, double weight) {
+        return weight / (height * height);
+
+
     }
+
 }
